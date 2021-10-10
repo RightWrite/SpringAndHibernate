@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 @Component // generate  Default bean id when not specified
 public class TennisCoach implements Coach {
 
+  @Autowired
   private FortuneService fortuneService;
 
   public TennisCoach() {
@@ -33,11 +34,11 @@ public class TennisCoach implements Coach {
 //    this.fortuneService = fortuneService;
 //  }
 
-  @Autowired
-  public void doSomeCrazyStuff(FortuneService fortuneService) {
-    System.out.println(">> TennisCoach : Inside doSomeCrazyStuff method ");
-    this.fortuneService = fortuneService;
-  }
+//  @Autowired
+//  public void doSomeCrazyStuff(FortuneService fortuneService) {
+//    System.out.println(">> TennisCoach : Inside doSomeCrazyStuff method ");
+//    this.fortuneService = fortuneService;
+//  }
 
 
 }
