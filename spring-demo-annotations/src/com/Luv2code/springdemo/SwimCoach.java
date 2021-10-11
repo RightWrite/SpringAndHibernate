@@ -5,19 +5,23 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-@Component
 public class SwimCoach implements Coach {
 
   @Value("${foo.email}")
   private String email;
 
-  @Autowired
-  @Qualifier("RESTFortuneService")
+  @Value("${foo.team}")
+  private String team;
+
   private FortuneService fortuneService;
+
+  public SwimCoach(FortuneService fortuneService) {
+    this.fortuneService = fortuneService;
+  }
 
   @Override
   public String getDailyWorkout() {
-    return "Try butterfly dive today";
+    return "Swim 1000m as a warm up";
   }
 
   @Override
@@ -27,5 +31,9 @@ public class SwimCoach implements Coach {
 
   public String getEmail() {
     return email;
+  }
+
+  public String getTeam() {
+    return team;
   }
 }
