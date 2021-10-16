@@ -1,6 +1,5 @@
-package com.luv2code.springdemo;
+package com.luv2code.spring.mvc.demo;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class HelloSpringApp {
